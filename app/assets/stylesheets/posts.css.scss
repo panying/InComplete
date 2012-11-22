@@ -1,0 +1,40 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body
+{ 
+background-image:url('background2.jpg');
+background-repeat:no-repeat;
+background-attachment:fixed;
+
+} 
+
+#content{
+	padding-left:150px;
+	padding-top:100px;
+
+}
+
+
+#extraDiv1 {
+	background-image: url('sun.png');
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 200px;
+	width: 200px;
+	position: fixed;
+	top: 0px;
+	z-index: 5;
+}
+
+#extraDiv2 {
+	background-image: url('alice.png');
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	height: 327px;
+	width: 500px;
+	position: fixed;
+	bottom: 0px;
+	right: 30px;
+	z-index: 5;
+}

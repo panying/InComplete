@@ -1,0 +1,63 @@
+
+<div id="content">
+<h1>New Post</h1>
+<div id="nav">
+Menu:
+<%= link_to 'My Portfolio', action: :index %> |  
+<%= link_to 'Home', action: :fulllist %>
+</div>
+
+
+<%= form_for :post, :html=>{ :multipart => true}, url: { action: :create } do |f| %>
+  <% if @post %>
+  <% if @post.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@post.errors.count, "error") %> prohibited
+      this post from being saved:</h2>
+    <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %> 
+  <% end %>
+  
+  
+  <p>
+    <%= f.label :Title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+ 
+  <p>
+    <%= f.hidden_field :posteremail, :value => current_user.email %>	
+  </p>
+   
+   <p>
+    <%= f.hidden_field :name, :value => current_user.name %>	
+  </p>
+ 
+ 
+  <p>
+    <%= f.label :Description %><br>
+    <%= f.text_area :text %>
+  </p>
+	
+  <p> 
+<%= f.file_field :picture%>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<div id="nav">
+Menu:
+<%= link_to 'My Portfolio', action: :index %> |  
+<%= link_to 'Home', action: :fulllist %>
+</div>
+
+
+</div>

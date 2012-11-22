@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Boke</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="logout">
+	<% if user_signed_in? %>
+	Hello! <%=current_user.name%> 
+		<%= link_to 'Logout', destroy_user_session_path, method: :delete%>
+		 
+	<% end %>
+</div>
+<div id="alerts">
+<% if notice %>
+<p class="notice"><%=notice%></p>
+<% end %>
+<% if alert %>
+<p class="alert"><%=alert%></p>
+<% end %>
+</div>
+
+<%= yield %>
+<div id="extraDiv1"></div>
+<div id="extraDiv2"></div>
+
+<div id="footer">
+Copyright (c) Ying All Rights Reserved.
+</div>
+</body>
+</html>

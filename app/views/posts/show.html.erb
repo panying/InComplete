@@ -1,0 +1,58 @@
+<div id="content">
+
+<div id="nav">
+Menu:
+<%= link_to 'My Portfolio', action: :index %> |  
+<%= link_to 'Create New Post', action: :new %>
+</div>
+
+<p>
+  <h3><%= @post.title %> by <%= @post.name%></h3>
+</p>
+ 
+<p>
+<% if @post.picture %>
+<%= image_tag @post.picture.url(:large) %>
+<% end %>
+</p>
+
+<p>
+  <h3>Description:</h3>
+  <%= @post.text %>
+</p>
+
+<h3>Comments:</h3>
+<% @post.comments.each do |comment| %>
+  <p><span style="color:#CC2B6B;"><%= comment.commenter %></span> said: <%= comment.body %>  
+  <%if @post.name == current_user.name %>
+	<%= link_to 'Delete', [comment.post, comment],
+				method: :delete,
+               data: { confirm: 'Are you sure?' } %> </p>
+  <% end %>
+<% end %>
+
+
+<%= form_for([@post, @post.comments.build]) do |f| %>
+  <p>
+    <%= current_user.name %> wants to say: <br/>
+	<%= f.hidden_field :commenter, :value => current_user.name %>
+  </p>
+  <p>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
+
+
+<div id="nav">
+Menu:
+<%= link_to 'My Portfolio', action: :index %> |  
+<%= link_to 'Create New Post', action: :new %>
+</div>
+
+</div>
+

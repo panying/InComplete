@@ -1,0 +1,43 @@
+<div id="content">
+<h1>My Portfolio</h1>
+ 
+<div id="nav">
+Menu:
+<%= link_to 'Home', action: :fulllist %> | 
+<%= link_to 'Create New Post', action: :new %>
+</div>
+
+ 
+<div id ="table"> 
+<table id="postlist">
+  <tr>
+    <th>Pic</th>
+    <th>Title</th>
+	<th>Author</th>	
+    <th>F(n1)</th>
+	<th>F(n2)</th>
+	<th>F(n3)</th>
+  </tr>
+<% if @posts %>
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= image_tag post.picture.url(:thumb) %></td>
+    <td><%= post.title %></td>
+	<td><%= post.name %></td>
+    <td><%= link_to 'Show', action: :show, id: post.id %></td>
+    <td><%= link_to 'Edit', action: :edit, id: post.id %></td>
+	<td><%= link_to 'Destroy', { action: :destroy, id: post.id }, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+  </tr>
+<% end %>
+<% end %>
+</table>
+</div>
+
+<div id="nav">
+Menu:
+<%= link_to 'Home', action: :fulllist %> | 
+<%= link_to 'Create New Post', action: :new %>
+</div>
+
+</div>

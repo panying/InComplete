@@ -1,0 +1,36 @@
+<div id="content">
+<h1>All Posts</h1>
+
+<div id="nav">
+Menu:
+<%= link_to 'My Portfolio', action: :index %> | 
+<%= link_to 'Create New Post', action: :new %>
+</div>
+
+
+<table id="postlist">
+  <tr>
+    <th>Pic</th>
+    <th>Title</th>
+	<th>Author</th>	
+    <th>F(n)</th>
+  </tr>
+<% if @posts %>
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= image_tag post.picture.url(:thumb) %></td>
+    <td><%= post.title %></td>
+	<td><%= post.name %></td>
+	<td><%= link_to 'Show', action: :show, id: post.id %></td>
+    </tr>
+<% end %>
+<% end %>
+</table>
+
+<div id="nav">
+Menu:
+<%= link_to 'My Portfolio', action: :index %> | 
+<%= link_to 'Create New Post', action: :new %>
+</div>
+
+</div>
