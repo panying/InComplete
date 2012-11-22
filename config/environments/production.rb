@@ -2,7 +2,9 @@ Incomplete::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
   
   #devise set up line below
-  config.action_mailer.default_url_options{:host=>'incomplete.herokuapp.com' }
+  	config.action_mailer.default_url_options
+	{:host=> 'incomplete.herokuapp.com' }
+ # config.action_mailer.default_url_options{:host=>'incomplete.herokuapp.com' }
   
   # Code is not reloaded between requests
   config.cache_classes = true
