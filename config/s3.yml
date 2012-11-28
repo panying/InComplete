@@ -1,0 +1,12 @@
+development:
+  bucket: incompletedev
+  access_key_id: AKIAJW7JSAAMQ7BZWINA
+  secret_access_key: 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
+test:
+  bucket: incompletetest
+  access_key_id: AKIAJW7JSAAMQ7BZWINA
+  secret_access_key: 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
+production:
+  bucket: incompletepro
+  access_key_id: AKIAJW7JSAAMQ7BZWINA
+  secret_access_key: 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
