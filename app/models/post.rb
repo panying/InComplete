@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
   has_attached_file :picture,
       :styles => {:thumb=> "150x150#",:small  => "200x200>", :large => "400x400>" },
 	  :storage => :s3,
-	  :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+	  :s3_credentials => "#{Rails.root}/config/s3.yml",
       :path => "/:style/:id/:filename"
   #validates_attachment_presence :picture
   #validates_attachment_presence :picture, :less_than => 5.megabytes
