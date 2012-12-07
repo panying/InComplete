@@ -15,7 +15,8 @@ Menu:
 	<th>Author</th>	
     <th>F(n)</th>
   </tr>
-<% if @posts %>
+  
+<!--% if @posts %-->
 <% @posts.each do |post| %>
   <tr>
     <td><%= image_tag post.picture.url(:thumb) %></td>
@@ -24,7 +25,7 @@ Menu:
 	<td><%= link_to 'Show', action: :show, id: post.id %></td>
     </tr>
 <% end %>
-<% end %>
+<!--% end %-->
 </table>
 
 <div id="nav">

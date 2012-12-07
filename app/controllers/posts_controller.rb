@@ -9,7 +9,11 @@ def new
 end
  
 def show
-  @post = Post.find(params[:id])
+	#if (params[:id] != "new" and params[:id] != "fulllist")
+		@post = Post.find(params[:id])
+	#else
+		#@post = Post.first
+	#end
 end
  
 def create
@@ -59,7 +63,6 @@ end
 def destroy
   @post = Post.find(params[:id])
   @post.destroy
- 
   redirect_to action: :index
 end
 
