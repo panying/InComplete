@@ -4,8 +4,8 @@ Incomplete::Application.configure do
   #devise set up line below
   	#config.action_mailer.default_url_options
 	#{:host=> 'incomplete.herokuapp.com' }
+  config.action_mailer.smtp_settings={:address => 'smtp.sendgrid.net', :port => '587', :authentication => :plain, :user_name => ENV['shirleypoon'], :password =>ENV['111111'],:domain=>'heroku.com'}
   config.action_mailer.default_url_options={:host=>'incomplete.herokuapp.com'}
-  
   # Code is not reloaded between requests
   config.cache_classes = true
 

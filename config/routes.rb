@@ -1,4 +1,8 @@
 Incomplete::Application.routes.draw do
+  resources :posts
+
+  resources :pledges
+
   devise_for :users
   get "welcome/index"
   get "welcome/:id" => "welcome#show"
